@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.helloandroid">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".RegActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CameraActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.helloandroid.file_provider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver
+            android:name=".TimeZoneReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.helloandroid.ServiceSender" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ServiceActivity" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.helloandroid.MyService" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="HelloAndoid.Text"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ContentActivity" />
+        <activity android:name=".ListActivity" />
+        <activity android:name=".ConstraintCalcActivity" />
+        <activity android:name=".FrameActivity" />
+        <activity android:name=".ConstraintActivity" />
+        <activity android:name=".GridActivity" />
+        <activity android:name=".TableActivity" />
+        <activity android:name=".NewLinearActivity" />
+        <activity android:name=".LinearActivity" />
+        <activity android:name=".AbsoluteActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

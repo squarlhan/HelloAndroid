@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">你好安卓</string>
+    <string-array name="mysp_arry">
+        <item>凯特</item>
+        <item>吉姆</item>
+        <item>科比</item>
+    </string-array>
+</resources>
