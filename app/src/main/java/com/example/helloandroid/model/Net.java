@@ -25,7 +25,7 @@ public class Net {
                     HttpURLConnection conn = (HttpURLConnection)url.openConnection();
                     //response based on the return result
                     if(conn.getResponseCode() == 200){
-                        Log.e("Reg", "Sucess!");
+                        Log.e("Reg", "Success!");
                         //read the message
                         InputStream input = conn.getInputStream();
                         byte[] buff = new byte[1024];
